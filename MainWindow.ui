@@ -94,23 +94,11 @@
    <widget class="QProgressBar" name="ProgressBar">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>10</y>
+      <x>140</x>
+      <y>30</y>
       <width>481</width>
-      <height>31</height>
+      <height>20</height>
      </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>481</width>
-      <height>31</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>481</width>
-      <height>31</height>
-     </size>
     </property>
     <property name="font">
      <font>
@@ -125,7 +113,7 @@
      <bool>false</bool>
     </property>
     <property name="value">
-     <number>25</number>
+     <number>50</number>
     </property>
     <property name="alignment">
      <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -524,6 +512,38 @@
     </property>
     <property name="text">
      <string>REWIND</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="audioFilenameLabel">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>AUDIO FILE:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="audioFileLabel">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>451</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
