@@ -143,7 +143,7 @@
      <enum>QProgressBar::TopToBottom</enum>
     </property>
     <property name="format">
-     <string>%v / %m</string>
+     <string>%v / %m       %p%</string>
     </property>
    </widget>
    <widget class="QSlider" name="ShuttleSlider">
