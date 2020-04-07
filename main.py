@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtUiTools import QUiLoader #allows us to import .ui files
-from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QFileDialog, QAction
+from PySide2.QtWidgets import QApplication, QLineEdit, QPushButton, QRadioButton, QProgressBar, QCheckBox, QSlider, QLabel, QFileDialog, QAction
 from PySide2.QtCore import QFile, QObject, QUrl
 from PySide2.QtMultimedia import QMediaPlayer
 
@@ -32,21 +32,90 @@ class MainWindow(QObject):
         quit_action = self.window.findChild(QAction, 'action_quit')
         quit_action.triggered.connect(self.quit_action_triggered)
 
-        play_button = self.window.findChild(QPushButton, 'play_button')
-        play_button.clicked.connect(self.play_button_clicked)
+        NextButton = self.window.findChild(QPushButton, 'NextButton')
+        NextButton.clicked.connect(self.next_button_clicked)
+
+        PauseButton = self.window.findChild(QPushButton, 'PauseButton')
+        PauseButton.clicked.connect(self.pause_button_clicked)
+        
+        PlayAllRadioButton = self.window.findChild(QRadioButton, 'PlayAllRadioButton')
+        PlayAllRadioButton.clicked.connect(self.play_all_button_clicked)
+        
+        PlayButton = self.window.findChild(QPushButton, 'PlayButton')
+        PlayButton.clicked.connect(self.play_button_clicked)
+        
+        PreviousButton = self.window.findChild(QPushButton, 'PreviousButton')
+        PreviousButton.clicked.connect(self.previous_button_clicked)
+        
+        ProgressBar = self.window.findChild(QProgressBar, 'ProgressBar')
+        ProgressBar.valueChanged.connect(self.progress_bar_moved)
+        
+        RepeatOnceRadioButton = self.window.findChild(QRadioButton, 'RepeatOnceRadioButton')
+        RepeatOnceRadioButton.clicked.connect(self.repeat_once_button_clicked)
+        
+        RepeatRadioButton = self.window.findChild(QRadioButton, 'RepeatRadioButton')
+        RepeatRadioButton.clicked.connect(self.repeat_button_clicked)
+
+        ShuffleCheckBox = self.window.findChild(QCheckBox, 'ShuffleCheckBox')
+        ShuffleCheckBox.clicked.connect(self.shuffle_checkbox_clicked)
+
+        ShuttleSlider = self.window.findChild(QSlider, 'ShuttleSlider')
+        ShuttleSlider.valueChanged.connect(self.shuttle_slider_moved)
+
+        VolumeSlider = self.window.findChild(QSlider, 'VolumeSlider')
+        VolumeSlider.valueChanged.connect(self.volume_slider_moved)
+
+        Playlist = self.window.findChild(QMediaPlaylist, 'Playlist')
+        VolumeSlider.itemDoubleClicked.connect(self.volume_slider_moved)
+
+
 
         #show window to user
         self.window.show()
 
     def open_action_triggered(self):
         file_name = QFileDialog.getOpenFileName(self.window)
+
         self.music_player.setMedia(QUrl.fromLocalFile(file_name[0]))
 
     def quit_action_triggered(self):
         self.window.close()
 
+    def pause_button_clicked(self):
+        self.music_player.pause()
+
+    def next_button_clicked(self):
+        add = code
+        
+    def play_all_button_clicked(self):
+        add = code
+    
     def play_button_clicked(self):
         self.music_player.play()
+    
+    #def previous_button_clicked(self):
+        #add code
+
+    #def progress_bar_moved(self):
+        #add code
+
+    #def repeat_once_button_clicked(self):
+        #add code
+
+    #def repeat_button_clicked(self):
+        #add code
+
+    #def shuffle_checkbox_clicked(self):
+        #add code
+
+    #def shuttle_slider_moved(self):
+        #add code
+
+    #def volume_slider_moved(self):
+        #add code
+
+    #def change_volume_level(self):
+        #self.music_player.setVolume(self.vo)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
