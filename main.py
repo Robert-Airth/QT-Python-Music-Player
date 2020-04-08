@@ -11,7 +11,8 @@ class MainWindow(QObject):
 
         #reference to our music player
         self.music_player = QMediaPlayer()
-        self.music_player.setVolume(100)
+        self.music_player.setVolume(50)
+        
 
         #call parent QObject constructor
         super(MainWindow, self).__init__(parent)
@@ -26,47 +27,49 @@ class MainWindow(QObject):
         ui_file.close()
 
         #add event listeners
-        open_action = self.window.findChild(QAction, 'action_open')
-        open_action.triggered.connect(self.open_action_triggered)
+        self.open_action = self.window.findChild(QAction, 'action_open')
+        self.open_action.triggered.connect(self.open_action_triggered)
 
-        quit_action = self.window.findChild(QAction, 'action_quit')
-        quit_action.triggered.connect(self.quit_action_triggered)
+        self.quit_action = self.window.findChild(QAction, 'action_quit')
+        self.quit_action.triggered.connect(self.quit_action_triggered)
 
-        NextButton = self.window.findChild(QPushButton, 'NextButton')
-        NextButton.clicked.connect(self.next_button_clicked)
+        #NextButton = self.window.findChild(QPushButton, 'NextButton')
+        #NextButton.clicked.connect(self.next_button_clicked)
 
-        PauseButton = self.window.findChild(QPushButton, 'PauseButton')
-        PauseButton.clicked.connect(self.pause_button_clicked)
+        self.PauseButton = self.window.findChild(QPushButton, 'PauseButton')
+        self.PauseButton.clicked.connect(self.pause_button_clicked)
         
-        PlayAllRadioButton = self.window.findChild(QRadioButton, 'PlayAllRadioButton')
-        PlayAllRadioButton.clicked.connect(self.play_all_button_clicked)
+        #PlayAllRadioButton = self.window.findChild(QRadioButton, 'PlayAllRadioButton')
+        #PlayAllRadioButton.clicked.connect(self.play_all_button_clicked)
         
-        PlayButton = self.window.findChild(QPushButton, 'PlayButton')
-        PlayButton.clicked.connect(self.play_button_clicked)
+        self.PlayButton = self.window.findChild(QPushButton, 'PlayButton')
+        self.PlayButton.clicked.connect(self.play_button_clicked)
         
-        PreviousButton = self.window.findChild(QPushButton, 'PreviousButton')
-        PreviousButton.clicked.connect(self.previous_button_clicked)
+        #PreviousButton = self.window.findChild(QPushButton, 'PreviousButton')
+        #PreviousButton.clicked.connect(self.previous_button_clicked)
         
-        ProgressBar = self.window.findChild(QProgressBar, 'ProgressBar')
-        ProgressBar.valueChanged.connect(self.progress_bar_moved)
+        #ProgressBar = self.window.findChild(QProgressBar, 'ProgressBar')
+        #ProgressBar.valueChanged.connect(self.progress_bar_moved)
         
-        RepeatOnceRadioButton = self.window.findChild(QRadioButton, 'RepeatOnceRadioButton')
-        RepeatOnceRadioButton.clicked.connect(self.repeat_once_button_clicked)
+        #RepeatOnceRadioButton = self.window.findChild(QRadioButton, 'RepeatOnceRadioButton')
+        #RepeatOnceRadioButton.clicked.connect(self.repeat_once_button_clicked)
         
-        RepeatRadioButton = self.window.findChild(QRadioButton, 'RepeatRadioButton')
-        RepeatRadioButton.clicked.connect(self.repeat_button_clicked)
+        #RepeatRadioButton = self.window.findChild(QRadioButton, 'RepeatRadioButton')
+        #RepeatRadioButton.clicked.connect(self.repeat_button_clicked)
 
-        ShuffleCheckBox = self.window.findChild(QCheckBox, 'ShuffleCheckBox')
-        ShuffleCheckBox.clicked.connect(self.shuffle_checkbox_clicked)
+        #ShuffleCheckBox = self.window.findChild(QCheckBox, 'ShuffleCheckBox')
+        #ShuffleCheckBox.clicked.connect(self.shuffle_checkbox_clicked)
 
-        ShuttleSlider = self.window.findChild(QSlider, 'ShuttleSlider')
-        ShuttleSlider.valueChanged.connect(self.shuttle_slider_moved)
+        #ShuttleSlider = self.window.findChild(QSlider, 'ShuttleSlider')
+        #ShuttleSlider.valueChanged.connect(self.shuttle_slider_moved)
 
-        VolumeSlider = self.window.findChild(QSlider, 'VolumeSlider')
-        VolumeSlider.valueChanged.connect(self.volume_slider_moved)
+        self.VolumeSlider = self.window.findChild(QSlider, 'VolumeSlider')
+        self.VolumeSlider.setValue(50)
+        self.VolumeSlider.valueChanged.connect(self.change_volume_level)
+    
 
-        Playlist = self.window.findChild(QMediaPlaylist, 'Playlist')
-        VolumeSlider.itemDoubleClicked.connect(self.volume_slider_moved)
+      #  Playlist = self.window.findChild(QMediaPlaylist, 'Playlist')
+       # Playlist.itemDoubleClicked.connect(self.volume_slider_moved)
 
 
 
@@ -84,11 +87,11 @@ class MainWindow(QObject):
     def pause_button_clicked(self):
         self.music_player.pause()
 
-    def next_button_clicked(self):
-        add = code
+    #def next_button_clicked(self):
+     #   add = code
         
-    def play_all_button_clicked(self):
-        add = code
+    #def play_all_button_clicked(self):
+        #
     
     def play_button_clicked(self):
         self.music_player.play()
@@ -111,11 +114,8 @@ class MainWindow(QObject):
     #def shuttle_slider_moved(self):
         #add code
 
-    #def volume_slider_moved(self):
-        #add code
-
-    #def change_volume_level(self):
-        #self.music_player.setVolume(self.vo)
+    def change_volume_level(self):
+        self.music_player.setVolume(self.VolumeSlider.value())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

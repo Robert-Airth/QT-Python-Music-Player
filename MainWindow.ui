@@ -183,6 +183,9 @@
       <height>91</height>
      </size>
     </property>
+    <property name="value">
+     <number>25</number>
+    </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
@@ -597,16 +600,6 @@
       <width>641</width>
       <height>111</height>
      </size>
-    </property>
-   </widget>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
     </property>
    </widget>
   </widget>
