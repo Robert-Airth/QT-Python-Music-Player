@@ -9,7 +9,7 @@ documentation, and my confidence in my understanding of the syntax/heirarchy/sco
 code diminished. I just kept: researching, getting confused, checking Jordan Abbott's code, and
 getting my logic working without a good understanding of why it was working. It was quite 
 frustrating and I'm hoping I have an epiphany about it all soon. It is pretty frustrating that a 
-widely accepted high-level loosely-typed language is giving me so much trouble. I am not happy
+widely accepted high-level language is giving me so much trouble. I am not happy
 with my finished product but I do think I met the base objectives for the assignment. 
 
 ![QTPythonMusicPlayerDemo](https://github.com/rja45/QT-Python-Music-Player/blob/master/QTPythonMusicPlayerDemo.gif)
