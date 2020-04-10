@@ -191,6 +191,9 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="RepeatOnceRadioButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -583,8 +586,8 @@
    <widget class="QListWidget" name="PlayListWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>160</y>
+      <x>0</x>
+      <y>170</y>
       <width>641</width>
       <height>111</height>
      </rect>
@@ -616,14 +619,14 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_open"/>
+    <addaction name="action_add_media"/>
     <addaction name="action_quit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
-  <action name="action_open">
+  <action name="action_add_media">
    <property name="text">
-    <string>&amp;Open</string>
+    <string>&amp;Add Media</string>
    </property>
   </action>
   <action name="action_quit">
