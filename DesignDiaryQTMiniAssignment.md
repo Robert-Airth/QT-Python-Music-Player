@@ -12,7 +12,8 @@ frustrating and I'm hoping I have an epiphany about it all soon. It is pretty fr
 widely accepted high-level loosely-typed language is giving me so much trouble. I am not happy
 with my finished product but I do think I met the base objectives for the assignment. 
 
-![QTPythonMusicPlayerDemo](https://github.com/rja45/QT-Python-Music-Player/master/QTPythonMusicPlayerDemo.gif)
+![QTPythonMusicPlayerDemo](https://github.com/rja45/QT-Python-Music-Player/blob/master/QTPythonMusicPlayerDemo.gif)
+
 
 
 
