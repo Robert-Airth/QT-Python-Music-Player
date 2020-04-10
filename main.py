@@ -33,6 +33,7 @@ class MainWindow(QObject):
         self.playlist = QMediaPlaylist()
         self.playlist.setPlaybackMode(QMediaPlaylist.Sequential)
         self.music_player.setPlaylist(self.playlist)
+        self.music_player.setNotifyInterval(50)
 
         #add a listener to change audio filename displayed
         

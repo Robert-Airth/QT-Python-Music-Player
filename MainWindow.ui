@@ -586,8 +586,8 @@
    <widget class="QListWidget" name="PlayListWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>170</y>
+      <x>10</x>
+      <y>150</y>
       <width>641</width>
       <height>111</height>
      </rect>
